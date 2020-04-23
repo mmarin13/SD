@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Economics</title>
+    <style>
+        #new_form, #update_form{
+            display: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #34495E;
+            color: white;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        td:nth-last-child(1) {
+            width: 10%;
+        }
+
+        td:nth-last-child(2) {
+            width: 10%;
+        }
+
+        @import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700';
+
+        body {
+              padding: 0 2em;
+              font-family: Montserrat, sans-serif;
+              color: #444;
+              background: #eee;
+        }
+
+        h1 {
+              font-weight: normal;
+              letter-spacing: -1px;
+              color: #34495E;
+              text-align: center;
+        }
+
+        .button {
+              display: inline-block;
+              padding: 5px 10px;
+              font-size: 1.2em;
+              cursor: pointer;
+              text-align: center;
+              text-decoration: none;
+              outline: none;
+              border-radius: 5px;
+        }
+
+        .button:hover {
+            color: white;
+            background-color: #999;
+        }
+
+        .button.update {
+            border: 1px solid orange;
+        }
+
+        .button.delete {
+            border: 1px solid red;
+        }
+
+        .button.new {
+            border: 1px solid #4CAF50;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Family Expenses</h1>
+    <table class="rwd-table">
+        <thead>
+            <tr>
+                <th>Author</th>
+                <th>Description</th>
+                <th>Value</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for expense in expenses %}
+            <tr>
+                <td>{{ expense.author }}</td>
+                <td>{{ expense.description }}</td>
+                <td>{{ expense.value }}</td>
+                <td class="end"><button onclick="getUpdateForm('{{ expense.author }}',
+                                                            '{{ expense.description }}',
+                                                            '{{ expense.value }}',
+                                                            '{{ expense.id }}')" class="button update">Update</button>
+                </td>
+                <td class="end"><form action="/economics/delete_expense" method="get">
+                    <input type="hidden" name="id" value="{{ expense.id }}"/>
+                    <button type="submit" class="button delete">Delete</button>
+                </form></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br />
+    <button onclick="getAddForm()" class="button new">Add new</button>
+    <br />
+    <br />
+    <!-- ADD NEW FORM -->
+    <form action="/economics/add_expense" method="post" id="new_form">
+        <fieldset>
+            <legend>Add new expense</legend>
+            <label>Author:</label>
+            <input type="text" name="author" />
+            <br />
+            <label>Description:</label>
+            <textarea name="description"></textarea>
+            <br />
+            <label>Value:</label>
+            <input type="number" name="value" required />
+            <br />
+        </fieldset>
+        <br />
+        <button type="submit" class="button new">Submit</button>
+    </form>
+    <!-- UPDATE FORM -->
+    <form action="/economics/update_expense" method="post" id="update_form">
+        <fieldset>
+            <legend>Update expense</legend>
+            <input type="hidden" name="id" id="id" />
+            <label>Author:</label>
+            <input type="text" name="author" id="auth"/>
+            <br />
+            <label>Description:</label>
+            <textarea name="description" id="descrip"></textarea>
+            <br />
+            <label>Value:</label>
+            <input type="number" name="value" id="val" required />
+            <br />
+        </fieldset>
+        <br />
+        <button type="submit" class="button update">Submit</button>
+    </form>
+    <script>
+        function getAddForm() {
+            document.getElementById("update_form").style.display = "none";
+            document.getElementById("new_form").style.display = "block";
+        }
+
+        function getUpdateForm(author, descrip, value, id) {
+            document.getElementById("new_form").style.display = "none";
+            document.getElementById("auth").value = author
+            document.getElementById("descrip").value = descrip
+            document.getElementById("val").value = value
+            document.getElementById("id").value = id
+            document.getElementById("update_form").style.display = "block";
+        }
+    </script>
+</body>
+</html>
