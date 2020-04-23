@@ -1,0 +1,26 @@
+<HashMap>
+  <AC124>
+    <nrMatricol>124</nrMatricol>
+    <nume>Iacob</nume>
+    <prenume>Matei</prenume>
+    <varsta>32</varsta>
+  </AC124>
+  <AC13>
+    <nrMatricol>13</nrMatricol>
+    <nume>Vadu</nume>
+    <prenume>Anca</prenume>
+    <varsta>19</varsta>
+  </AC13>
+  <AC57>
+    <nrMatricol>57</nrMatricol>
+    <nume>Dinu</nume>
+    <prenume>Sabina</prenume>
+    <varsta>25</varsta>
+  </AC57>
+  <AC34>
+    <nrMatricol>34</nrMatricol>
+    <nume>Radu</nume>
+    <prenume>Mihai</prenume>
+    <varsta>45</varsta>
+  </AC34>
+</HashMap>
