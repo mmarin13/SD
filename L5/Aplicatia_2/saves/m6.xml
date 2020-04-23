@@ -1,0 +1,32 @@
+<carti>
+	<carte>
+		<titlu>Programming in LUA</titlu>
+		<autor>Roberto Ierusalimschy</autor>
+		<editura>Teora</editura>
+		<text>Preface. When Waldemar, Luiz, and I started the development of Lua, back in 1993, we could hardly imagine that it would spread as it did. ...</text>
+	</carte>
+	<carte>
+		<titlu>Steaua Sudului</titlu>
+		<autor>Jules Verne</autor>
+		<editura>Corint</editura>
+		<text>Nemaipomeniti sunt francezii astia! - Vorbiti, domnule, va ascult! ....</text>
+	</carte>
+	<carte>
+		<titlu>O calatorie spre centrul pamantului</titlu>
+		<autor>Jules Verne</autor>
+		<editura>Polirom</editura>
+		<text>Cuvant Inainte. Imaginatia copiilor - zicea un mare poet romantic spaniol - este asemenea unui cal nazdravan, iar curiozitatea lor e pintenul ce-l fugareste prin lumea celor mai indraznete proiecte.</text>
+	</carte>
+	<carte>
+		<titlu>Insula Misterioasa</titlu>
+		<autor>Jules Verne</autor>
+		<editura>Teora</editura>
+		<text>Partea intai. Naufragiatii vazduhului. Capitolul 1. Uraganul din 1865. ...</text>
+	</carte>
+	<carte>
+		<titlu>Casa cu aburi</titlu>
+		<autor>Jules Verne</autor>
+		<editura>Albatros</editura>
+		<text>Capitolul I. S-a pus un premiu pe capul unui om. Se ofera premiu de 2000 de lire ...</text>
+	</carte>
+</carti>
