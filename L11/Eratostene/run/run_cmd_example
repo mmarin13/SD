@@ -1,0 +1,1 @@
+echo '{"numbers": [23, 6, 8, 9, 2, 13, 12, 17]}' | java -jar eratostene-0.1.jar 

@@ -1,0 +1,1 @@
+echo '{"message":"https://xkcd.com/atom.xml"}' | java -jar producer-0.1.jar | java -jar consumer-0.1.jar -x
